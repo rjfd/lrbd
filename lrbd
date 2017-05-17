@@ -940,7 +940,7 @@ class Configs(object):
             raise IOError("{} does not exist".format(self.ceph_conf))
 
         self.client_name = client_name if client_name else "client.admin"
-        self.hostname = hostname if hostname else socket.gethostname()
+        self.hostname = hostname if hostname else socket.getfqdn()
         self.pool_list = pool_list if pool_list else None
 
         Common.config_name = self.config_name
@@ -2806,7 +2806,7 @@ if __name__ == "__main__":
                         help='specify the ceph configuration file', metavar='ceph')
     parser.add_argument('-H', '--host', action='store', dest='host',
                         help='specify the hostname, defaults to "{}"'.
-                        format(socket.gethostname()), metavar='host')
+                        format(socket.getfqdn()), metavar='host')
     parser.add_argument('-n', '--name', action='store', dest='name',
                         help='specify the client name for Ceph authentication, defaults to "client.admin"',
                         metavar='name')
