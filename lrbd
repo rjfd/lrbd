@@ -940,7 +940,7 @@ class Configs(object):
             raise IOError("{} does not exist".format(self.ceph_conf))
 
         self.client_name = client_name if client_name else "client.admin"
-        self.hostname = hostname if [hostname] else [socket.gethostname(), socket.getfqdn()]
+        self.hostname = [hostname] if hostname else [socket.gethostname(), socket.getfqdn()]
         self.pool_list = pool_list if pool_list else None
 
         Common.config_name = self.config_name
