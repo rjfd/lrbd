@@ -2627,8 +2627,8 @@ class Auth(object):
                "set", "auth",
                "userid={}".format(self.auth['tpg']['userid']),
                "password={}".format(self.auth['tpg']['password']),
-               "userid_mutual={}".format(self.auth['tpg']['userid_mutual']),
-               "password_mutual={}".format(self.auth['tpg']['password_mutual'])]
+               "mutual_userid={}".format(self.auth['tpg']['userid_mutual']),
+               "mutual_password={}".format(self.auth['tpg']['password_mutual'])]
         return cmd
 
     def set_tpg_mode(self):
@@ -2739,8 +2739,8 @@ class Auth(object):
                "set", "auth",
                "userid={}".format(self.acl['userid']),
                "password={}".format(self.acl['password']),
-               "userid_mutual={}".format(self.acl['userid_mutual']),
-               "password_mutual={}".format(self.acl['password_mutual'])]
+               "mutual_userid={}".format(self.acl['userid_mutual']),
+               "mutual_password={}".format(self.acl['password_mutual'])]
         return cmd
 
     def set_initiator_mode(self):
